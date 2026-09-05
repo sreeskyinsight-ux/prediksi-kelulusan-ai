@@ -8,52 +8,67 @@ st.set_page_config(
     layout="centered"
 )
 
-# Custom CSS untuk Estetika dan Tampilan Profesional
+# Custom CSS untuk Estetika Akademik Profesional (Warm Ivory & Deep Navy)
 st.markdown("""
     <style>
-    /* Mengubah latar belakang utama */
+    /* Latar belakang utama: Warna gading/ivory hangat ala perpustakaan akademik */
     .stApp {
-        background-color: #0e1117;
-        color: #ffffff;
+        background-color: #f7f5f0;
+        color: #2c3e50;
     }
     
-    /* Styling Sidebar */
-    [data-testid="stSidebar"] {
-        background-color: #161b22;
-        border-right: 1px solid #30363d;
+    /* Warna teks umum agar kontras dan tajam */
+    .stApp p, .stApp span, .stApp label, .stMarkdown {
+        color: #2c3e50 !important;
     }
 
-    /* Mempercantik Kotak Input Chat */
+    /* Styling Sidebar: Biru navy gelap berwibawa khas institusi */
+    [data-testid="stSidebar"] {
+        background-color: #1b263b;
+        border-right: 1px solid #d1d5db;
+    }
+    [data-testid="stSidebar"] p, [data-testid="stSidebar"] span, [data-testid="stSidebar"] label, [data-testid="stSidebar"] div {
+        color: #e0e1dd !important;
+    }
+    [data-testid="stSidebar"] hr {
+        border-color: #415a77;
+    }
+
+    /* Kotak Input Chat */
     .stChatInputContainer input {
-        background-color: #1f242d !important;
-        color: #ffffff !important;
-        border-radius: 12px !important;
-        border: 1px solid #30363d !important;
+        background-color: #ffffff !important;
+        color: #1b263b !important;
+        border-radius: 10px !important;
+        border: 1px solid #cbd5e1 !important;
     }
     
-    /* Tombol Kustom */
+    /* Tombol Kustom ala Buku/Jurnal */
     .stButton button {
-        border-radius: 8px;
+        border-radius: 6px;
         font-weight: 500;
+        background-color: #415a77;
+        color: #ffffff;
+        border: none;
         transition: all 0.3s ease;
     }
     .stButton button:hover {
-        border-color: #58a6ff;
-        color: #58a6ff;
+        background-color: #778da9;
+        color: #ffffff;
     }
 
-    /* Judul Utama */
-    h1 {
-        font-family: 'Inter', sans-serif;
+    /* Judul Utama dengan sentuhan klasik */
+    h1, h2, h3 {
+        color: #1b263b !important;
+        font-family: 'Georgia', serif;
         font-weight: 700;
-        letter-spacing: -0.5px;
+        letter-spacing: -0.3px;
     }
     </style>
 """, unsafe_allow_html=True)
 
 # Sidebar untuk Informasi dan Kontrol
 with st.sidebar:
-    st.image("https://img.icons8.com/color/96/artificial-intelligence.png", width=70)
+    st.image("https://img.icons8.com/color/96/books.png", width=70)
     st.subheader("Navigasi Sesi")
     st.write("Gunakan layanan konsultasi ini untuk membantumu merencanakan studi dengan lebih terarah.")
     st.markdown("---")
@@ -73,7 +88,7 @@ with st.sidebar:
 
 # Header Utama Aplikasi
 st.title("🎓 ASISTEN AKADEMIK")
-st.markdown("Platform konsultasi cerdas untuk mendukung perencanaan dan pencapaian studimu.")
+st.markdown("Platform konsultasi terpadu untuk mendukung perencanaan dan pencapaian studimu.")
 st.markdown("---")
 
 # Ambil API Key secara aman dari Streamlit Secrets
